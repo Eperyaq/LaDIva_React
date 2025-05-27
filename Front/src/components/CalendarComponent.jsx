@@ -60,8 +60,6 @@ function CalendarComponent(newEvent) {
       const eventosFiltrados = eventos.filter(evento => evento !== null);
     
       setEvents(eventosFiltrados);
-
-       // Para ver los eventos en la consola
     };
     
     obtenerCitasConfirmadas();

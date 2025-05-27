@@ -9,13 +9,11 @@ import Separador from '../components/Separador.jsx';
 import Resenia from '../components/Resenia.jsx';
 import '../styles/Css/Home.css'
 import { DarkModeContext } from '../context/DarkModeContext.jsx';
-import { UserContext } from '../context/userContext';
 
 
 function Home({logged}) {
 
   const {darkMode} = useContext(DarkModeContext);
-  const { isAdmin } = useContext(UserContext);
 
   const tattooImages = [
     yani.batman,

@@ -1,6 +1,11 @@
 const { Pago, CitaConfirmada } = require('../model');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
+/**
+ * Crea un PaymentIntent con Stripe y actualiza el estado de la cita a "confirmada"
+ * @param {import('express').Request} req
+ * @param {import('express').Response} res
+ */
 exports.pagar = async (req, res) => {
     try {
         const { cantidad, usuarioId, citaId, servicio } = req.body;

@@ -1,13 +1,20 @@
 const { google } = require('googleapis');
 
+/** @type {google.auth.GoogleAuth} */
 const auth = new google.auth.GoogleAuth({
   keyFile: process.env.GOOGLE_APPLICATION_CREDENTIALS,
   scopes: ['https://www.googleapis.com/auth/calendar'],
 });
 
+/** @type {google.calendar_v3.Calendar} */
 const calendar = google.calendar({ version: 'v3', auth });
 
-exports.crearEvento = async (req,res) => {
+/**
+ * Crea un evento en Google Calendar
+ * @param {import('express').Request} req
+ * @param {import('express').Response} res
+ */
+exports.crearEvento = async (req, res) => {
   const { nombre, descripcion, fechaInicio, fechaFin, deposito } = req.body;
 
   try {
@@ -37,8 +44,13 @@ exports.crearEvento = async (req,res) => {
     console.error('Error creando evento:', error);
     res.status(500).json({ error: 'Error al crear el evento' });
   }
-}
+};
 
+/**
+ * Obtiene eventos del calendario para los próximos 7 días
+ * @param {import('express').Request} req
+ * @param {import('express').Response} res
+ */
 exports.getEventos = async (req, res) => {
   try {
     const now = new Date();

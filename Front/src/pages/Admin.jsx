@@ -67,7 +67,7 @@ function Admin() {
     { nombre: "terminos", label: "He leido y acepto los terminos y condiciones", type: "checkbox", required: true }
   ];
   
-  //Meter el método de pago 
+  
   const handleSubmitTatoo = async (e) => {
       e.preventDefault();
     

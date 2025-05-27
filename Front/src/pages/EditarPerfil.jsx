@@ -24,7 +24,6 @@ function EditarPerfil() {
         if (token) {
           const decoded = jwtDecode(token);
           setUserId(decoded.id); 
-          console.log("ID del usuario:", decoded.id);
         }
       }, []);
 

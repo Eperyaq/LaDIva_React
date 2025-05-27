@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { obtenerCitasConfirmadas, asignarCita, obtenerAllCitasConfirmadas, cancelarCita, eliminarCita} = require("../controller/citaConfirmadaController");
+const { obtenerCitasConfirmadas, asignarCita, obtenerAllCitasConfirmadas, cancelarCita} = require("../controller/citaConfirmadaController");
 const verificarToken = require("../middleware/authMiddleware");
 
 

@@ -51,6 +51,7 @@ function Formulario({ campos, formData, setFormData, onSubmit, buttonText, mensa
                     checked={ terminoAceptado || false}
                     onChange={aceptarTerminos}
                   />
+                  {/* Si es checkbox de términos, renderizamos texto y botón para abrir modal */}
                   {campo.nombre === "terminos" ? (
                     <>
                       {campo.label.split("términos")[0]}
@@ -75,6 +76,7 @@ function Formulario({ campos, formData, setFormData, onSubmit, buttonText, mensa
                 <label className="form-label">{campo.label}</label>
 
                 <section className="input-container">
+                  {/* Si es select, renderizamos un <select> con sus opciones */}
                   {campo.type === "select" ? (
                     <select
                       className="select-input"
@@ -114,7 +116,8 @@ function Formulario({ campos, formData, setFormData, onSubmit, buttonText, mensa
                       required={campo.required}
                     />
                   )}
-
+                  
+                  {/* Botón para mostrar/ocultar password con iconos */}
                   {campo.type === "password" && (
                     <button
                       type="button"

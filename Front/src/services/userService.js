@@ -1,5 +1,6 @@
 import API_URL from "../config/config";
 
+// Función para iniciar sesión de usuario
 export const loginUser = async (email, password) => {
   try {
     const response = await fetch(`${API_URL}/usuario/login`, {
@@ -27,6 +28,7 @@ export const loginUser = async (email, password) => {
 
 };
 
+// Función para registrar un nuevo usuario
 export const register = async (nombre, email, password, telefono) => {
     try {
       const response = await fetch(`${API_URL}/usuario/register`, {
@@ -48,12 +50,14 @@ export const register = async (nombre, email, password, telefono) => {
     }
 };
 
+//Funcion para cerrar sesión
 export const logout = () => {
     localStorage.removeItem("token");
 
     window.dispatchEvent(new Event("loginStatusChanged"));
 }
 
+// Función para editar el perfil del usuario
 export const editarPerfil  = async (id, nombre, email, password) => {
   
   const token = localStorage.getItem("token");

@@ -34,7 +34,7 @@ app.use("/api/citas", citaRutas); // Endpoints para citas
 app.use("/api/citasConfirmadas", confirmadasRutas); // Endpoints para citas CONFIRMADAS
 app.use("/api/upload", uploadRoutes); //Endpoints para las imagenes
 app.use("/api/stripe", stripeRoutes); //Endpoints para el pago con stripe
-app.use("/api/calendar", calendarRoute); //Endpoints para el pago con stripe
+app.use("/api/calendar", calendarRoute); //Endpoints para el calendario
 
 
 

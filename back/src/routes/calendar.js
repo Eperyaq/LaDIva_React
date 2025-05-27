@@ -6,9 +6,9 @@ require('dotenv').config();
 
 const router = express.Router();
 
-router.post('/crear', verificarToken, crearEvento);
+router.post('/crear', verificarToken, crearEvento); //Crea un evento en el calendario
 
-router.get('/eventos', verificarToken, getEventos)
+router.get('/eventos', verificarToken, getEventos) //Obtiene los eventos del calendario
 
 module.exports = router;
 
