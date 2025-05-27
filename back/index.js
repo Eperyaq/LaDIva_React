@@ -14,7 +14,6 @@ const calendarRoute = require("./src/routes/calendar"); // Webhook para google C
 
 const app = express();
 
-
 // Middlewares
 app.use(cors()); // Permitir peticiones desde otros dominios
 
